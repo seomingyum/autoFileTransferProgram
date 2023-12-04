@@ -52,24 +52,25 @@ public class ServerApp {
 					OutputStream os = null;
 					BufferedOutputStream bos = null;
 					try {
-						dis = new DataInputStream(socket.getInputStream());
+						dis = new DataInputStream(socket.getInputStream());					
+						dos = new DataOutputStream(socket.getOutputStream());
+						
 						//json(파일명, 파일사이즈) 수신
 						JasonCatcher jasonCatcher = new JasonCatcher();
-						JSONObject root = jasonCatcher.jasonCatch(socket, dis);
+						JSONObject root = jasonCatcher.jasonCatch(dis);
 					
 						//파일 데이터수신
 						os = new FileOutputStream(ServerApp.serverDir+File.separator+root.getString("fileName"));
 						bos = new BufferedOutputStream(os);
 						FileDataCatcher fileDataCatcher = new FileDataCatcher();
-						fileDataCatcher.fileDataCatcher(socket, root, bos, dis);
+						fileDataCatcher.fileDataCatcher(root, bos, dis);
 						
 						//파일 정합성 체크
-						dos = new DataOutputStream(socket.getOutputStream());
 						String clientFileName = root.getString("fileName");
 						long clientFileSize =root.getLong("fileSize");
 						File serverFile = new File(ServerApp.serverDir + File.separator + root.getString("fileName"));
 						ConsistencyChecker consistencyChecker = new ConsistencyChecker();
-						consistencyChecker.consistencyCheck(socket, dos, serverFile,clientFileName, clientFileSize);
+						consistencyChecker.consistencyCheck(dos, serverFile,clientFileName, clientFileSize);
 						
 					} catch (IOException e) {
 						serverLogger.log("파일을 수신받을 수 없습니다.");

@@ -7,9 +7,8 @@ import java.net.Socket;
 
 public class AccomplishedFilenameSender {
 	
-	public void accomplishedFilenameSned(Socket socket, File serverFile ,DataOutputStream dos) {
+	public void accomplishedFilenameSned(File serverFile ,DataOutputStream dos) {
 		try {
-			dos = new DataOutputStream(socket.getOutputStream());
 			dos.writeUTF(serverFile.getName());
 			dos.flush();
 		} catch (Exception e) {

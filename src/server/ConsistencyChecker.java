@@ -7,12 +7,11 @@ import java.net.Socket;
 
 public class ConsistencyChecker {
 	
-	public void consistencyCheck(Socket socket, DataOutputStream dos, File serverFile, String clientFileName, long clientFileSize) {
+	public void consistencyCheck(DataOutputStream dos, File serverFile, String clientFileName, long clientFileSize) {
 		// 파일의 정합성이 보장되지 않는다면 클라이언트로 "inconsistent"를 전송한다.
 		if(!(serverFile.getName().equals(clientFileName)) || serverFile.length()!=clientFileSize) {
 			serverFile.delete();
 			try {
-				dos = new DataOutputStream(socket.getOutputStream());
 				dos.writeUTF("inconsistent");
 				dos.flush();
 			} catch (IOException e) {
@@ -26,7 +25,7 @@ public class ConsistencyChecker {
 			
 			//저장 완료된 파일 이름 보내기
 			AccomplishedFilenameSender accomplishedFilenameSneder = new AccomplishedFilenameSender();
-			accomplishedFilenameSneder.accomplishedFilenameSned(socket, serverFile ,dos);
+			accomplishedFilenameSneder.accomplishedFilenameSned(serverFile ,dos);
 		}
 	}
 }

@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 public class JasonCatcher {
 	
-	public JSONObject jasonCatch(Socket socket, DataInputStream dis) {
+	public JSONObject jasonCatch(DataInputStream dis) {
 		JSONObject root=null;
 		try {
 			String json = dis.readUTF();

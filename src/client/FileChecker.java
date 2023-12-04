@@ -44,7 +44,7 @@ public class FileChecker {
 						
 						//json(파일명, 파일사이즈) 전송
 						JasonSender jasonSender = new JasonSender();
-						jasonSender.jsonSend(socket, json, file, dos);
+						jasonSender.jsonSend(json, file, dos);
 
   					    //파일 전송
 						FileDataSender fileDataSender = new FileDataSender();
@@ -70,6 +70,14 @@ public class FileChecker {
 						if(bis!=null) {
 							try {
 								bis.close();
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
+						
+						if(dis!=null) {
+							try {
+								dis.close();
 							} catch (IOException e) {
 								e.printStackTrace();
 							}

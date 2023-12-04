@@ -7,7 +7,7 @@ import java.net.Socket;
 
 public class JasonSender {
 
-	public void jsonSend(Socket socket, String json, File file, DataOutputStream dos) {
+	public void jsonSend(String json, File file, DataOutputStream dos) {
 		Thread thread = Thread.currentThread();
 		ClientApp.clientLogger.info(thread.toString()+" : " +"("+file.getName()+")"+"전송 시작");
 		try {

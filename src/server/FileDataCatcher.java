@@ -9,7 +9,7 @@ import org.json.JSONObject;
 
 public class FileDataCatcher {
 
-	public void fileDataCatcher(Socket socket, JSONObject root, BufferedOutputStream bos, DataInputStream dis) {
+	public void fileDataCatcher(JSONObject root, BufferedOutputStream bos, DataInputStream dis) {
 		try {
 			// 클라이언트로 부터 받은 파일데이터 수신
 			byte[] data = new byte[1024];
