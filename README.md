@@ -16,15 +16,15 @@
 
 ### 2. properties파일 
 - properties파일을 활용해서 프로그램을 설정할 수 있습니다.
-  1)Ip 및 Port(client, server)
-  2)최대 파일 병렬전송 갯수(client)
-  3)최대 파일 병렬수신 갯수(server)
-  4)전송할 파일을 담은 디렉토리(client)
-  5)수신받을 디렉토리(server)
-  6)출력할 로그 레벨 기준(client, server)
-  7)로그 콘솔 출력 모드(client, server)
-  8)로그 파일 저장 모드(client, server)
-  9)파일 자동 탐색 시간(client)
+  -1)Ip 및 Port(client, server)
+  -2)최대 파일 병렬전송 갯수(client)
+  -3)최대 파일 병렬수신 갯수(server)
+  -4)전송할 파일을 담은 디렉토리(client)
+  -5)수신받을 디렉토리(server)
+  -6)출력할 로그 레벨 기준(client, server)
+  -7)로그 콘솔 출력 모드(client, server)
+  -8)로그 파일 저장 모드(client, server)
+  -9)파일 자동 탐색 시간(client)
 
 ### 3. 멀티스레드를 통한 파일 병렬전송 및 수신
 - client측은 멀티스레드(스레드풀)를 활용하여 파일을 병렬전송 할 수 있습니다.
