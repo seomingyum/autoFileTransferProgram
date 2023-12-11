@@ -4,7 +4,7 @@
 - scr폴더 아래 client폴더는 파일을 전송하는 클라이언트, server폴더는 파일을 전송받는 서버입니다.
 - clinet, server에서 propertis파일을 로딩합니다.
 - client에서 server로 파일명, 파일사이즈를 전송합니다.(json)
-- server에서 파일명, 파일사이즈를 수신받습니다.
+- server에서 파일명, 파일사이즈를 수신받습니다.(json)
 - client에서 설정한 디렉토리안에 있는 파일데이터(byte)를 server로 전송합니다.
 - server는 파일데이터(byte)를 설정한 디렉토리에 저장합니다.
 - server는 client로부터 전송받은 파일명, 파일사이즈와 설정한 디렉토리에 저장한 파일데이터(byte)의 파일명, 파일사이즈와 비교해서 정합성을 확인합니다.
