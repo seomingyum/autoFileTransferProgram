@@ -16,7 +16,7 @@
 
 ### 2. properties파일 
 - properties파일을 활용해서 프로그램을 설정할 수 있습니다.
-  - 1. Ip 및 Port(client, server)
+  - Ip 및 Port(client, server)
   - 2. 최대 파일 병렬전송 갯수(client)
   - 3. 최대 파일 병렬수신 갯수(server)
   - 4. 전송할 파일을 담은 디렉토리(client)
