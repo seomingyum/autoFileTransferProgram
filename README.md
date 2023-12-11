@@ -34,4 +34,4 @@
 ### 4. 로그설정
 - java.util.logging.Logger클래스를 활용하여 client, server프로그램 모두 debug, info, severe 출력할 수 있습니다.
 - propertes 설정파일을 통해 log정보를 파일로 저장 할지 선택할 수 있습니다.
-- propertes 설정파일을 통해 개발단계 및 운영단계에 맞게 로그레벨을 설정할 수 있도록 했습니다.
+- propertes 설정파일을 통해 개발단계 및 운영단계에 맞게 출력할 로그레벨을 설정할 수 있도록 했습니다.
