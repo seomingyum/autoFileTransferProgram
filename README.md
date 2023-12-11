@@ -1,4 +1,4 @@
-## java기반 자동파일전송프로그램 입니다.
+## Java기반 자동파일전송프로그램 입니다.
 
 ### 1.흐름
 - scr폴더 아래 client폴더는 파일을 전송하는 클라이언트, server폴더는 파일을 전송받는 서버입니다.
@@ -32,6 +32,6 @@
 - server측도 멀티스레드(스레드풀)를 활용하여 파일을 병렬로 전송 받을 수 있습니다.
 
 ### 4. 로그설정
-- java의 java.util.logging.Logger클래스를 활용하여 client, server프로그램 모두 debug, info, severe 출력할 수 있습니다.
+- java.util.logging.Logger클래스를 활용하여 client, server프로그램 모두 debug, info, severe 출력할 수 있습니다.
 - propertes 설정파일을 통해 log정보를 파일로 저장할 수 있도록 했습니다.
 - propertes 설정파일을 통해 개발단계 및 운영단계에 맞게 로그레벨을 설정할 수 있도록 했습니다.
