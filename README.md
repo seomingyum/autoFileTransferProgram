@@ -1,6 +1,22 @@
 ## Java기반 자동파일전송프로그램 입니다.
 
-### 1.흐름
+### 1.클래스 구성
+- 1-1.client
+  - ClientApp.java - 클라이언트 실행 클래스
+  - CilentLogger.java - 클라이언트 로거 설정 클래스
+  - FileChecker.java - 클라이언트측 디렉토리 탐색 클래스
+  - JasonSender.java - 서버측으로 Jason(파일명, 파일사이즈) 전송 클래스 
+  - FileDataSender.java - 서버측으로 파일데이터 전송 클래스
+  - FileDeleter.java - 클라이언트측 파일삭제 클래스
+- 1-2.server
+  - ServerApp.java - 서버 실행 클래스
+  - ServerLogger.java - 서버 로거 설정 클래스
+  - JasonCathcer.java - 클라이언트로부터 Jason(파일명, 파일사이즈) 수신 클래스
+  - FileDataCatcher.java - 클라이언트로부터 파일데이터 수신 및 서버측 디렉토리에 파일 저장 클래스
+  - ConsistencyChecker.java - 클라이언트로부터 받은 파일명, 파일사이즈와 서버측 디렉토리에 저장된 파일명, 파일사이즈 정합성 체크 클래스
+  - AccomplishedFilenameSender.java - 클라이언트측으로 정합성 보장된 파일명 전송 클래스
+
+### 2.흐름
 - scr폴더 아래 client폴더는 파일을 전송하는 클라이언트, server폴더는 파일을 전송받는 서버입니다.
 - clinet, server에서 propertis파일을 로딩합니다.
 - client에서 server로 파일명, 파일사이즈를 전송합니다.(json)
@@ -14,7 +30,7 @@
 - client에서 server로부터 정합성이 보장되지 않는다는 것("inconsistent")을 수신받는다면 해당 파일을 삭제하지 않습니다.(client 프로그램에서 log로 서버에 저장된 파일이 정합성이 보장되지 않는 것을 출력합니다.)
 
 
-### 2. properties파일 
+### 3. properties파일 
 - properties파일을 활용해서 프로그램을 설정할 수 있습니다.
   - Ip 및 Port(client, server)
   - 최대 파일 병렬전송 갯수(client)
@@ -26,12 +42,12 @@
   - 로그 파일 저장 모드(client, server)
   - 파일 자동 탐색 시간(client)
 
-### 3. 소켓 및 멀티스레드를 통한 파일 병렬전송 및 수신
+### 4. 소켓 및 멀티스레드를 통한 파일 병렬전송 및 수신
 - client, server 둘다 스레드 당 하나의 소켓을 부여해 파일 병렬 전송 및 수신이 가능합니다.
 - client측은 멀티스레드(스레드풀)를 활용하여 파일을 병렬전송 할 수 있습니다.
 - server측도 멀티스레드(스레드풀)를 활용하여 파일을 병렬수신 할 수 있습니다.
 
-### 4. 로그설정
+### 5. 로그설정
 - java.util.logging.Logger클래스를 활용하여 client, server프로그램 모두 debug, info, severe 출력할 수 있습니다.
 - propertes 설정파일을 통해 log정보를 파일로 저장 할지 선택할 수 있습니다.
 - propertes 설정파일을 통해 개발단계 및 운영단계에 맞게 출력할 로그레벨을 설정할 수 있도록 했습니다.
