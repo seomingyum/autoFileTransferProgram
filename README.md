@@ -1,6 +1,6 @@
 ## Java기반 자동파일전송프로그램 입니다.
 
-### 1.클래스 구성
+### 1.클래스 및 설정파일 구성
 - 1-1.client
   - ClientApp.java - 클라이언트 실행 클래스
   - CilentLogger.java - 클라이언트 로거 설정 클래스
@@ -15,6 +15,9 @@
   - FileDataCatcher.java - 클라이언트로부터 파일데이터 수신 및 서버측 디렉토리에 파일 저장 클래스
   - ConsistencyChecker.java - 클라이언트로부터 받은 파일명, 파일사이즈와 서버측 디렉토리에 저장된 파일명, 파일사이즈 정합성 체크 클래스
   - AccomplishedFilenameSender.java - 클라이언트측으로 정합성 보장된 파일명 전송 클래스
+- 1-3.properties
+  - client.properties - 클라이언트 프로그램 설정파일
+  - server.properties - 서버 프로그램 설정파일
 
 ### 2.흐름
 - scr폴더 아래 client폴더는 파일을 전송하는 클라이언트, server폴더는 파일을 전송받는 서버입니다.
